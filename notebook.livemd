@@ -89,6 +89,8 @@ In this example, there are 7 measurements that are larger than the previous meas
 
 <!-- livebook:{"livebook_object":"cell_input","name":"Day 1 Input","type":"textarea","value":"104\n105\n109\n120\n124\n113\n120\n121\n122\n123\n134\n133\n134\n150\n160\n165\n179\n178\n180\n178\n196\n197\n198\n204\n197\n213\n206\n207\n209\n210\n211\n223\n212\n224\n228\n238\n237\n238\n242\n245\n249\n250\n253\n248\n261\n265\n274\n276\n274\n275\n278\n275\n276\n267\n266\n272\n275\n279\n280\n286\n282\n292\n308\n323\n324\n319\n310\n304\n309\n310\n320\n326\n322\n340\n341\n340\n339\n344\n346\n342\n353\n352\n353\n349\n346\n330\n342\n343\n344\n329\n348\n346\n367\n373\n379\n384\n388\n398\n387\n392\n391\n385\n409\n411\n416\n419\n420\n423\n422\n420\n421\n422\n421\n422\n441\n438\n428\n431\n443\n427\n433\n434\n432\n421\n429\n432\n434\n439\n437\n445\n456\n462\n464\n472\n474\n460\n433\n439\n433\n444\n456\n457\n452\n454\n455\n465\n474\n475\n486\n489\n490\n491\n472\n477\n475\n493\n497\n495\n496\n488\n500\n501\n504\n505\n524\n525\n522\n530\n548\n545\n562\n570\n582\n583\n584\n586\n585\n604\n606\n610\n617\n619\n621\n623\n620\n622\n624\n625\n633\n627\n623\n638\n639\n644\n643\n644\n648\n663\n695\n681\n682\n686\n692\n708\n712\n720\n736\n737\n738\n739\n738\n741\n742\n741\n746\n748\n751\n750\n782\n788\n793\n799\n790\n834\n852\n860\n848\n856\n857\n859\n860\n863\n849\n844\n854\n860\n862\n865\n864\n866\n887\n878\n899\n893\n895\n896\n897\n876\n877\n886\n887\n898\n905\n906\n907\n875\n877\n875\n894\n893\n871\n878\n879\n872\n868\n873\n884\n900\n899\n886\n896\n903\n909\n928\n932\n935\n928\n913\n917\n919\n920\n912\n917\n923\n926\n927\n932\n936\n944\n942\n961\n960\n961\n956\n951\n971\n980\n990\n999\n1005\n1008\n1010\n1011\n1032\n1034\n1041\n1066\n1067\n1064\n1066\n1070\n1068\n1079\n1100\n1122\n1118\n1111\n1113\n1141\n1145\n1170\n1171\n1170\n1167\n1170\n1171\n1178\n1183\n1186\n1189\n1190\n1198\n1200\n1202\n1204\n1207\n1226\n1243\n1245\n1246\n1247\n1273\n1267\n1274\n1276\n1298\n1293\n1313\n1315\n1298\n1301\n1316\n1322\n1282\n1256\n1257\n1263\n1271\n1294\n1313\n1322\n1323\n1322\n1324\n1309\n1320\n1325\n1321\n1327\n1335\n1334\n1335\n1346\n1382\n1388\n1393\n1395\n1403\n1417\n1424\n1426\n1427\n1428\n1429\n1432\n1431\n1430\n1411\n1439\n1440\n1441\n1458\n1461\n1466\n1471\n1481\n1483\n1486\n1488\n1494\n1490\n1492\n1489\n1533\n1560\n1577\n1582\n1583\n1592\n1594\n1593\n1594\n1599\n1605\n1616\n1619\n1621\n1627\n1651\n1655\n1656\n1655\n1653\n1651\n1652\n1653\n1657\n1658\n1660\n1674\n1680\n1694\n1700\n1698\n1676\n1648\n1644\n1643\n1645\n1652\n1653\n1654\n1660\n1663\n1664\n1668\n1671\n1681\n1687\n1699\n1702\n1705\n1707\n1712\n1739\n1750\n1753\n1755\n1779\n1769\n1792\n1793\n1798\n1828\n1832\n1811\n1844\n1845\n1846\n1848\n1854\n1857\n1859\n1863\n1866\n1862\n1894\n1898\n1875\n1878\n1879\n1884\n1897\n1883\n1894\n1889\n1890\n1889\n1907\n1924\n1926\n1936\n1940\n1949\n1950\n1968\n1973\n1974\n1971\n1982\n1989\n2004\n2005\n2007\n2018\n2032\n2037\n2039\n2040\n2042\n2046\n2056\n2053\n2054\n2057\n2059\n2063\n2067\n2065\n2059\n2049\n2052\n2045\n2053\n2057\n2063\n2066\n2061\n2068\n2063\n2058\n2060\n2061\n2066\n2065\n2093\n2094\n2126\n2135\n2136\n2119\n2121\n2134\n2135\n2137\n2138\n2143\n2144\n2152\n2159\n2154\n2159\n2162\n2164\n2158\n2163\n2162\n2159\n2165\n2166\n2167\n2165\n2169\n2172\n2182\n2188\n2173\n2182\n2175\n2182\n2203\n2205\n2206\n2212\n2213\n2218\n2229\n2226\n2233\n2235\n2233\n2257\n2258\n2284\n2280\n2282\n2285\n2279\n2280\n2291\n2292\n2293\n2294\n2291\n2292\n2293\n2300\n2308\n2303\n2308\n2312\n2311\n2320\n2315\n2326\n2328\n2330\n2352\n2349\n2352\n2357\n2346\n2360\n2375\n2374\n2375\n2377\n2385\n2392\n2383\n2386\n2388\n2403\n2411\n2400\n2401\n2402\n2399\n2400\n2401\n2397\n2417\n2419\n2431\n2430\n2429\n2421\n2429\n2427\n2428\n2429\n2424\n2425\n2426\n2432\n2433\n2435\n2436\n2441\n2454\n2455\n2456\n2464\n2462\n2463\n2465\n2475\n2489\n2495\n2497\n2467\n2484\n2486\n2487\n2502\n2509\n2504\n2503\n2496\n2515\n2516\n2542\n2550\n2552\n2554\n2557\n2559\n2565\n2563\n2552\n2553\n2555\n2552\n2559\n2564\n2565\n2548\n2546\n2536\n2540\n2542\n2543\n2544\n2561\n2550\n2551\n2552\n2556\n2562\n2559\n2596\n2583\n2586\n2584\n2585\n2590\n2592\n2590\n2591\n2599\n2615\n2617\n2595\n2599\n2607\n2605\n2600\n2612\n2611\n2591\n2611\n2590\n2599\n2597\n2604\n2612\n2613\n2620\n2603\n2592\n2604\n2606\n2588\n2591\n2577\n2576\n2606\n2605\n2614\n2618\n2622\n2633\n2636\n2648\n2649\n2638\n2637\n2644\n2651\n2650\n2651\n2658\n2657\n2659\n2661\n2660\n2658\n2669\n2676\n2688\n2691\n2693\n2697\n2698\n2702\n2699\n2706\n2707\n2710\n2698\n2697\n2705\n2717\n2718\n2720\n2721\n2731\n2749\n2757\n2765\n2767\n2759\n2776\n2780\n2784\n2778\n2779\n2783\n2788\n2789\n2825\n2826\n2820\n2825\n2852\n2871\n2870\n2872\n2873\n2878\n2882\n2900\n2906\n2908\n2907\n2917\n2931\n2933\n2931\n2952\n2953\n2954\n2962\n2971\n2973\n2960\n2965\n2967\n2968\n2982\n2983\n2994\n2997\n3014\n3026\n3028\n3040\n3057\n3063\n3064\n3065\n3066\n3073\n3056\n3052\n3067\n3070\n3071\n3072\n3073\n3077\n3078\n3074\n3083\n3082\n3079\n3080\n3081\n3073\n3069\n3072\n3081\n3111\n3109\n3112\n3126\n3127\n3128\n3129\n3135\n3146\n3147\n3149\n3142\n3148\n3152\n3165\n3173\n3201\n3216\n3217\n3218\n3217\n3235\n3236\n3241\n3247\n3248\n3249\n3251\n3252\n3251\n3250\n3252\n3260\n3261\n3259\n3255\n3256\n3257\n3258\n3259\n3264\n3299\n3300\n3304\n3313\n3326\n3324\n3326\n3331\n3340\n3341\n3343\n3348\n3342\n3380\n3381\n3370\n3374\n3390\n3379\n3382\n3383\n3386\n3388\n3382\n3386\n3402\n3400\n3406\n3408\n3407\n3409\n3411\n3412\n3411\n3412\n3422\n3441\n3446\n3451\n3449\n3451\n3480\n3500\n3511\n3520\n3521\n3525\n3548\n3557\n3558\n3560\n3561\n3562\n3570\n3571\n3575\n3571\n3570\n3574\n3576\n3583\n3587\n3594\n3615\n3619\n3620\n3622\n3607\n3599\n3602\n3604\n3607\n3617\n3618\n3623\n3626\n3632\n3637\n3635\n3640\n3641\n3642\n3654\n3668\n3669\n3675\n3670\n3672\n3675\n3684\n3688\n3701\n3699\n3705\n3704\n3718\n3724\n3717\n3734\n3736\n3741\n3729\n3730\n3731\n3722\n3717\n3718\n3711\n3708\n3719\n3737\n3738\n3734\n3740\n3747\n3749\n3740\n3752\n3758\n3784\n3787\n3792\n3800\n3802\n3803\n3805\n3814\n3815\n3813\n3816\n3812\n3815\n3816\n3803\n3799\n3805\n3806\n3809\n3788\n3781\n3783\n3779\n3780\n3786\n3776\n3780\n3790\n3802\n3806\n3789\n3790\n3791\n3804\n3801\n3797\n3823\n3826\n3828\n3831\n3834\n3843\n3867\n3870\n3879\n3883\n3893\n3909\n3934\n3932\n3955\n3961\n3963\n3968\n3994\n4001\n4002\n3999\n4008\n4003\n4006\n3997\n3990\n4020\n4021\n4027\n4031\n4038\n4039\n4043\n4040\n4036\n4049\n4050\n4075\n4077\n4079\n4061\n4060\n4062\n4059\n4050\n4052\n4053\n4094\n4097\n4106\n4107\n4108\n4112\n4118\n4122\n4125\n4124\n4126\n4127\n4129\n4130\n4131\n4139\n4163\n4164\n4169\n4168\n4176\n4177\n4175\n4177\n4183\n4186\n4188\n4194\n4173\n4163\n4168\n4198\n4201\n4202\n4205\n4177\n4178\n4181\n4180\n4211\n4214\n4215\n4218\n4219\n4218\n4215\n4220\n4230\n4231\n4232\n4276\n4281\n4288\n4289\n4291\n4293\n4297\n4304\n4319\n4330\n4337\n4343\n4353\n4360\n4361\n4377\n4402\n4401\n4424\n4429\n4445\n4452\n4456\n4460\n4457\n4434\n4436\n4438\n4441\n4442\n4437\n4439\n4446\n4447\n4457\n4456\n4454\n4455\n4456\n4461\n4473\n4471\n4473\n4481\n4495\n4498\n4504\n4511\n4520\n4541\n4540\n4561\n4572\n4577\n4578\n4577\n4572\n4575\n4582\n4608\n4617\n4623\n4625\n4635\n4640\n4673\n4675\n4676\n4692\n4687\n4688\n4692\n4703\n4685\n4674\n4693\n4708\n4703\n4693\n4681\n4682\n4696\n4722\n4729\n4732\n4739\n4740\n4744\n4750\n4751\n4752\n4751\n4744\n4746\n4749\n4754\n4758\n4748\n4749\n4760\n4759\n4761\n4757\n4767\n4779\n4771\n4772\n4774\n4773\n4791\n4792\n4790\n4797\n4790\n4800\n4810\n4836\n4830\n4826\n4828\n4838\n4836\n4840\n4846\n4848\n4863\n4865\n4867\n4880\n4883\n4892\n4908\n4905\n4909\n4890\n4891\n4882\n4889\n4898\n4900\n4903\n4909\n4913\n4919\n4920\n4922\n4915\n4922\n4923\n4944\n4960\n4978\n4979\n4983\n5006\n5009\n5012\n5011\n5023\n5045\n5010\n5026\n5027\n5030\n5049\n5055\n5053\n5068\n5069\n5077\n5083\n5084\n5087\n5094\n5093\n5101\n5108\n5110\n5111\n5116\n5118\n5121\n5153\n5155\n5156\n5157\n5150\n5171\n5172\n5180\n5191\n5185\n5194\n5218\n5221\n5216\n5224\n5225\n5226\n5225\n5231\n5227\n5228\n5223\n5247\n5245\n5246\n5260\n5287\n5281\n5285\n5287\n5291\n5302\n5303\n5304\n5302\n5310\n5321\n5317\n5326\n5327\n5329\n5307\n5310\n5313\n5336\n5358\n5367\n5369\n5375\n5379\n5368\n5370\n5371\n5372\n5377\n5383\n5384\n5389\n5402\n5404\n5397\n5400\n5402\n5403\n5396\n5400\n5391\n5394\n5400\n5386\n5382\n5389\n5385\n5386\n5388\n5390\n5391\n5397\n5401\n5403\n5405\n5409\n5412\n5431\n5435\n5440\n5457\n5454\n5422\n5423\n5424\n5423\n5426\n5417\n5420\n5424\n5422\n5447\n5446\n5455\n5460\n5472\n5475\n5482\n5483\n5485\n5493\n5494\n5500\n5512\n5519\n5539\n5550\n5554\n5561\n5571\n5597\n5598\n5579\n5584\n5589\n5591\n5592\n5593\n5594\n5616\n5618\n5628\n5630\n5617\n5625\n5626\n5655\n5654\n5663\n5673\n5670\n5669\n5661\n5660\n5665\n5669\n5667\n5675\n5677\n5679\n5680\n5703\n5709\n5710\n5708\n5710\n5711\n5713\n5714\n5715\n5709\n5738\n5714\n5718\n5734\n5735\n5743\n5738\n5739\n5740\n5749\n5752\n5768\n5757\n5753\n5752\n5753\n5754\n5755\n5758\n5770\n5769\n5768\n5781\n5789\n5798\n5799\n5814\n5815\n5824\n5828\n5829\n5830\n5831\n5837\n5835\n5836\n5832\n5820\n5821\n5822\n5814\n5817\n5818\n5821\n5818\n5811\n5814\n5842\n5844\n5863\n5874\n5870\n5883\n5878\n5890\n5891\n5900\n5896\n5895\n5863\n5860\n5861\n5859\n5861\n5865\n5862\n5864\n5870\n5890\n5884\n5889\n5893\n5898\n5902\n5922\n5924\n5926\n5907\n5909\n5915\n5914\n5923\n5925\n5930\n5932\n5934\n5946\n5947\n5950\n5945\n5957\n5965\n5966\n5971\n5967\n5973\n5974\n5977\n5979\n5984\n5991\n5992\n5994\n6002\n6005\n6006\n6011\n6012\n6014\n6000\n6019\n6034\n6053\n6035\n6036\n6042\n6047\n6048\n6050\n6054\n6074\n6075\n6077\n6046\n6055\n6058\n6060\n6061\n6062\n6073\n6081\n6086\n6088\n6096\n6097\n6098\n6099\n6096\n6110\n6112\n6113\n6112\n6111\n6132\n6115\n6118\n6127\n6124\n6128\n6139\n6145\n6156\n6155\n6153\n6152\n6153\n6157\n6164\n6176\n6186\n6187\n6188\n6190\n6192\n6185\n6190\n6191\n6192\n6191\n6198\n6200\n6213\n6214\n6222\n6242\n6236\n6246\n6256\n6257\n6256\n6257\n6258\n6259\n6284\n6285\n6286\n6290\n6291\n6287\n6294\n6298\n6311\n6301\n6309\n6312\n6315\n6318\n6323\n6325\n6334\n6323\n6322\n6323\n6334\n6335\n6332\n6343\n6344\n6348\n6352\n6358\n6361\n6362\n6367\n6381\n6395\n6412\n6411\n6410\n6426\n6444\n6455\n6461\n6470\n6449\n6456\n6455\n6464\n6463\n6468\n6474\n6478\n6477\n6474\n6473\n6468\n6474\n6476\n6501\n6513\n6516\n6517\n6518\n6513\n6515\n6519\n6515\n6531\n6537\n6538\n6531\n6545\n6553\n6554\n6560\n6559\n6562\n6551\n6563\n6559\n6557\n6562\n6564\n6562\n6564\n6563\n6568\n6572\n6573\n6572\n6583\n6591\n6595\n6587\n6589\n6590\n6581\n6583\n6593\n6592\n6616\n6627\n6654\n6657\n6667\n6668\n6680\n6695\n6682\n6685\n6691\n6708\n6720\n6722\n6723\n6721\n6750\n6759\n6760\n6759\n6760\n6769\n6772\n6780\n6774\n6782\n6774\n6777\n6778\n6777\n6786\n6787\n6792\n6796\n6802\n6814\n6816\n6813\n6814\n6823\n6807\n6805\n6804\n6805\n6806\n6807\n6801\n6803\n6806\n6807\n6799\n6812\n6832\n6858\n6846\n6856\n6857\n6865\n6867\n6876\n6877\n6887\n6889\n6895\n6896\n6900\n6901\n6881\n6874\n6873\n6876\n6883\n6888\n6898\n6899\n6910\n6913\n6934\n6932\n6939\n6940\n6943\n6968\n6974\n6978\n6975\n6956\n6971\n6953\n6976\n6983\n6980\n6986\n6987\n6988\n6989\n6992\n7003\n7004\n7005\n7004\n7011\n7017\n7019\n7030\n7033\n7037\n7043\n7053\n7058\n7062\n7076\n7078\n7080\n7093\n7094\n7095\n7107\n7106\n7109\n7110\n7111\n7112\n7113\n7116\n7117\n7119\n7118\n7119\n7120\n7122\n7134\n7145\n7142\n7174\n7175\n7185\n7189\n7190\n7191\n7214\n7228\n7236\n7252\n7267\n7296\n7302\n7303\n7322\n7321\n7323\n7327\n7331\n7333\n7337\n7334\n7343\n7344\n7352\n7361\n7369\n7381\n7384\n7385\n7384\n7389\n7393\n7394\n7395\n7403\n7425\n7430\n7431\n7433\n7441\n7440\n7424\n7427\n7419\n7430\n7432\n7436\n7437\n7450\n7451\n7457\n7477\n7485\n7490\n7496\n7503\n7504\n7508\n7509\n7485\n7490\n7501\n7502\n7506\n7512\n7513\n7514\n7515\n7513\n7528\n7545\n7554\n7563\n7569\n7570\n7573\n7574\n7586\n7589\n7605\n7618\n7620\n7621\n7624\n7645\n7658\n7669\n7672\n7670\n7671\n7678\n7680\n7692\n7712\n7724\n7730\n7736\n7737\n7746\n7759"} -->
 
+### Following solution is naive and performs at O(1.5n)
+
 ```elixir
 day_1_input =
   Utils.read_textarea("Day 1 Input")
@@ -147,16 +149,20 @@ In this example, there are 5 sums that are larger than the previous sum.
 
 *Consider sums of a three-measurement sliding window. How many sums are larger than the previous sum?*
 
+<!-- livebook:{"break_markdown":true} -->
+
+### The following solution is naive and performs at O(~5n)
+
 ```elixir
 triplets_of_depths = Enum.chunk_every(day_1_input, 3, 1, :discard)
 
-Enum.reduce(triplets_of_depths, {0, nil}, fn depths, {total, prev_sum} ->
+Enum.reduce(triplets_of_depths, {0, nil, 0}, fn depths, {total, prev_sum, n} ->
   next_sum = Enum.sum(depths)
 
   cond do
-    prev_sum == nil -> {total, next_sum}
-    prev_sum < next_sum -> {total + 1, next_sum}
-    true -> {total, next_sum}
+    prev_sum == nil -> {total, next_sum, n + 1 + length(depths)}
+    prev_sum < next_sum -> {total + 1, next_sum, n + 1 + length(depths)}
+    true -> {total, next_sum, n + 1 + length(depths)}
   end
 end)
 |> elem(0)
@@ -164,4 +170,188 @@ end)
 
 ```output
 1608
+```
+
+### Optimized solutions both performing at O(n - step_size)
+
+```elixir
+part_one_step_size = 1
+part_one_range = Range.new(0, length(day_1_input) - part_one_step_size)
+
+part_one_answer =
+  for i <- part_one_range, reduce: 0 do
+    acc ->
+      first = Enum.at(day_1_input, i)
+      second = Enum.at(day_1_input, i + part_one_step_size)
+
+      cond do
+        second == nil -> acc
+        first < second -> acc + 1
+        true -> acc
+      end
+  end
+
+IO.puts("Part One Answer: #{part_one_answer}")
+
+part_two_step_size = 3
+part_two_range = Range.new(0, length(day_1_input) - part_two_step_size)
+
+part_two_answer =
+  for i <- part_two_range, reduce: 0 do
+    acc ->
+      first = Enum.at(day_1_input, i)
+      second = Enum.at(day_1_input, i + part_two_step_size)
+
+      cond do
+        second == nil -> acc
+        first < second -> acc + 1
+        true -> acc
+      end
+  end
+
+IO.puts("Part Two Answer: #{part_two_answer}")
+```
+
+```output
+Part One Answer: 1557
+Part Two Answer: 1608
+```
+
+```output
+:ok
+```
+
+## Day 2: Dive!
+
+Now, you need to figure out how to pilot this thing.
+
+It seems like the submarine can take a series of commands like forward 1, down 2, or up 3:
+
+forward X increases the horizontal position by X units.
+down X increases the depth by X units.
+up X decreases the depth by X units.
+Note that since you're on a submarine, down and up affect your depth, and so they have the opposite result of what you might expect.
+
+The submarine seems to already have a planned course (your puzzle input). You should probably figure out where it's going. For example:
+
+```
+forward 5
+down 5
+forward 8
+up 3
+down 8
+forward 2
+```
+
+Your horizontal position and depth both start at 0. The steps above would then modify them as follows:
+
+`forward 5` adds 5 to your horizontal position, a total of 5.
+
+`down 5` adds 5 to your depth, resulting in a value of 5.
+
+`forward 8` adds 8 to your horizontal position, a total of 13.
+
+`up 3` decreases your depth by 3, resulting in a value of 2.
+
+`down 8` adds 8 to your depth, resulting in a value of 10.
+
+`forward 2` adds 2 to your horizontal position, a total of 15.
+
+After following these instructions, you would have a horizontal position of 15 and a depth of 10. (Multiplying these together produces 150.)
+
+*Calculate the horizontal position and depth you would have after following the planned course. What do you get if you multiply your final horizontal position by your final depth?*
+
+<!-- livebook:{"livebook_object":"cell_input","name":"Day 2 Input","type":"textarea","value":"forward 2\nforward 3\nforward 5\nforward 6\ndown 7\nforward 8\nforward 4\nforward 7\nforward 5\nforward 5\ndown 4\ndown 9\nforward 8\nforward 5\nup 5\ndown 5\nforward 3\ndown 4\ndown 8\nforward 9\ndown 1\nup 9\ndown 7\nup 7\nup 1\nforward 1\ndown 1\ndown 4\ndown 4\ndown 8\ndown 4\nup 3\ndown 1\ndown 3\nforward 7\ndown 6\nforward 3\nforward 5\nforward 2\nup 9\nforward 7\nup 5\ndown 3\nforward 1\nforward 2\ndown 3\ndown 8\ndown 3\nforward 8\nup 5\ndown 5\nforward 3\ndown 5\nforward 9\ndown 3\ndown 4\ndown 9\ndown 7\nup 3\ndown 9\nup 9\nup 1\nforward 3\nup 4\ndown 3\nforward 7\nforward 7\nup 7\nforward 6\ndown 7\ndown 6\nforward 2\nforward 9\ndown 5\nforward 4\nup 6\ndown 1\ndown 9\ndown 9\nforward 4\ndown 1\nforward 6\ndown 1\ndown 5\ndown 4\ndown 4\nforward 4\nforward 9\nup 1\ndown 2\ndown 8\ndown 5\ndown 8\ndown 8\nup 2\nforward 8\nup 1\nforward 4\ndown 5\ndown 1\nup 2\nforward 6\nforward 9\nforward 2\nforward 6\nforward 9\nup 6\nforward 9\nup 4\ndown 7\nup 6\nforward 2\ndown 1\nup 3\nforward 1\nforward 8\ndown 6\ndown 8\ndown 8\nforward 8\nforward 2\nforward 2\ndown 2\nup 1\ndown 9\nup 9\ndown 9\nup 3\nforward 9\nup 4\nup 7\nup 6\ndown 9\nforward 1\ndown 3\ndown 4\nforward 8\ndown 3\ndown 9\nup 3\nforward 2\nup 5\ndown 3\nforward 8\nup 3\ndown 3\nforward 2\nforward 9\ndown 1\ndown 9\ndown 4\nup 7\ndown 4\nup 6\nforward 5\ndown 6\nforward 3\ndown 2\nforward 1\nforward 8\ndown 4\nforward 1\nup 7\nforward 6\nup 9\nforward 6\ndown 3\nforward 2\ndown 4\nforward 6\ndown 3\ndown 6\ndown 1\ndown 1\ndown 5\nforward 3\nforward 9\nforward 8\ndown 3\nforward 7\nup 9\nforward 9\nup 2\nforward 4\nup 3\nforward 1\nup 6\nup 8\ndown 5\ndown 6\nup 9\ndown 6\ndown 9\nup 9\ndown 4\nforward 5\nup 2\ndown 3\nup 3\ndown 1\nforward 3\ndown 5\nforward 7\ndown 6\ndown 7\ndown 5\nforward 2\nup 6\ndown 9\ndown 4\ndown 3\nforward 9\nup 8\nforward 2\ndown 2\nforward 4\nup 6\ndown 4\nup 8\ndown 7\ndown 2\nup 6\nup 4\ndown 2\nforward 5\nup 4\ndown 8\nforward 3\nforward 1\ndown 7\nforward 8\nforward 7\ndown 7\nup 4\nforward 8\ndown 5\nup 9\nforward 1\nforward 4\nforward 9\nforward 7\ndown 9\nup 9\ndown 1\ndown 7\nforward 7\ndown 7\ndown 7\ndown 3\ndown 5\nforward 3\ndown 2\nforward 6\ndown 9\nup 5\nup 3\nforward 5\ndown 6\ndown 1\nforward 4\ndown 3\nforward 8\ndown 7\nforward 7\nforward 7\nup 7\nup 2\nup 3\nforward 9\ndown 5\nup 2\nforward 5\nup 5\nforward 2\nforward 2\ndown 8\nforward 2\nup 4\nforward 1\nforward 3\nup 8\nup 9\nforward 5\ndown 1\nup 8\ndown 4\ndown 8\nup 4\nforward 9\ndown 6\ndown 8\nup 2\nup 3\ndown 7\ndown 4\nforward 5\ndown 6\nforward 3\nforward 3\nforward 8\ndown 1\ndown 7\ndown 9\ndown 2\ndown 7\nforward 7\ndown 7\ndown 6\nup 6\nforward 8\nforward 5\nup 5\ndown 2\nup 8\nup 4\ndown 9\nup 2\nforward 5\nup 2\ndown 4\nup 4\nforward 2\nforward 4\nforward 9\nforward 9\nup 4\nup 5\ndown 1\ndown 6\ndown 1\ndown 4\ndown 5\ndown 3\nforward 3\ndown 9\nforward 6\ndown 3\ndown 9\ndown 2\nup 2\ndown 2\ndown 7\nforward 9\ndown 3\ndown 3\ndown 2\ndown 3\nforward 2\ndown 9\ndown 9\nup 5\nup 3\nforward 4\nup 7\nforward 8\nup 6\nforward 7\ndown 7\ndown 1\nforward 5\ndown 2\nup 1\ndown 8\nup 3\nforward 2\nup 9\ndown 1\ndown 3\ndown 6\ndown 2\ndown 7\nup 2\nforward 5\nforward 7\ndown 2\nforward 5\nforward 4\nforward 5\ndown 3\nforward 7\ndown 7\nforward 8\ndown 3\ndown 2\nup 1\nforward 6\ndown 4\ndown 2\nforward 7\nup 3\ndown 4\nforward 2\nup 6\ndown 3\nup 6\nup 8\ndown 9\nup 6\nforward 8\nforward 9\nforward 4\nforward 7\ndown 2\nforward 9\ndown 7\nup 9\ndown 5\ndown 6\nup 5\ndown 4\nforward 8\nforward 4\nforward 4\ndown 6\nforward 3\nforward 6\ndown 9\ndown 9\nup 2\nforward 7\ndown 8\ndown 9\ndown 9\nforward 7\nforward 3\ndown 7\ndown 8\nforward 8\ndown 6\ndown 5\ndown 9\ndown 3\nforward 1\ndown 5\nforward 2\nforward 8\ndown 2\nforward 6\nforward 3\ndown 7\ndown 4\nforward 8\nforward 1\ndown 6\nforward 9\nforward 6\nup 1\nup 3\ndown 8\nforward 1\nup 5\ndown 4\nforward 7\nup 3\ndown 2\nforward 1\nforward 9\ndown 9\ndown 7\nforward 8\ndown 4\nup 3\ndown 4\nforward 2\nforward 6\ndown 7\nforward 6\ndown 6\ndown 4\ndown 1\nup 9\ndown 4\ndown 7\nup 4\ndown 9\nforward 6\ndown 3\nforward 2\ndown 4\nforward 3\ndown 5\nup 9\nforward 8\nup 7\nup 6\nup 4\nforward 1\ndown 1\nforward 4\nup 6\nforward 5\nforward 4\nforward 5\nup 6\ndown 1\nforward 3\nup 7\ndown 9\nup 9\ndown 5\nforward 6\nforward 4\nup 1\ndown 4\nup 1\nforward 3\nforward 1\ndown 3\nforward 7\ndown 2\nforward 3\nup 2\nforward 8\ndown 3\nup 9\ndown 5\nforward 6\ndown 1\ndown 8\ndown 5\nforward 1\ndown 6\nup 2\nforward 6\ndown 2\ndown 1\nup 6\nup 7\ndown 5\nforward 7\nforward 6\nforward 6\ndown 7\nforward 4\ndown 5\nup 5\ndown 1\nup 8\ndown 8\ndown 2\ndown 2\ndown 9\nup 9\nforward 2\nforward 7\ndown 7\ndown 4\ndown 4\ndown 8\nforward 5\nforward 2\nup 9\ndown 9\nforward 7\nup 9\ndown 2\ndown 7\nup 2\nup 8\nforward 8\ndown 4\nforward 3\nforward 4\nforward 6\nforward 2\ndown 1\ndown 2\nforward 2\nup 1\ndown 1\nforward 5\nup 3\nup 3\ndown 3\ndown 1\ndown 4\nup 5\nup 6\nforward 5\nup 7\nforward 6\ndown 4\ndown 7\nup 8\nforward 1\ndown 5\nup 4\nup 3\nup 5\ndown 1\nup 5\nforward 3\nup 5\nforward 2\nforward 2\nforward 5\nforward 2\nup 9\nforward 4\ndown 1\ndown 3\ndown 5\nup 2\ndown 8\nforward 8\nforward 9\ndown 1\ndown 3\nforward 8\nforward 2\ndown 2\ndown 1\nup 7\nforward 2\nforward 8\ndown 9\nforward 1\nforward 4\ndown 7\ndown 4\nup 7\ndown 3\ndown 1\ndown 4\nup 7\ndown 6\nforward 7\ndown 8\nup 2\nup 4\nup 6\ndown 9\ndown 9\ndown 8\nforward 6\nup 3\nup 1\nforward 9\nforward 6\nup 4\nup 2\nup 7\nforward 5\nup 9\nup 9\nforward 9\nup 6\ndown 1\ndown 3\nforward 3\ndown 2\ndown 2\ndown 6\ndown 9\nforward 3\nforward 7\nup 3\nforward 3\ndown 5\nforward 9\nup 6\ndown 2\nforward 8\ndown 3\nup 5\ndown 6\nforward 9\ndown 5\ndown 2\ndown 6\nforward 8\nforward 6\ndown 1\nforward 6\nup 1\nup 7\ndown 4\ndown 7\nforward 4\nforward 7\ndown 4\nforward 8\ndown 8\ndown 7\nforward 9\ndown 1\ndown 3\ndown 6\nforward 7\nforward 6\nforward 3\nforward 8\ndown 5\ndown 3\nup 1\ndown 9\ndown 8\nforward 3\ndown 6\ndown 1\nforward 5\nforward 5\nforward 9\nup 5\ndown 6\nup 9\ndown 7\ndown 6\nup 1\nforward 5\nforward 7\nforward 8\nforward 7\nforward 6\nforward 3\nforward 1\nforward 2\nup 4\nforward 3\nforward 4\nforward 5\nup 2\nup 3\nforward 4\ndown 9\nup 4\nforward 7\ndown 6\ndown 6\ndown 1\nforward 2\ndown 2\nforward 2\ndown 3\nforward 7\nforward 8\ndown 4\nup 7\nforward 7\ndown 7\nforward 7\nforward 9\ndown 7\nup 2\ndown 3\nforward 7\ndown 1\nforward 8\nforward 2\nup 9\ndown 3\nforward 2\nup 4\nforward 9\ndown 4\ndown 4\nforward 4\ndown 2\ndown 9\nforward 4\ndown 2\ndown 6\nforward 9\nforward 2\nup 1\nforward 2\nforward 3\ndown 5\nup 8\ndown 4\ndown 4\nforward 7\ndown 2\nup 6\ndown 9\nforward 9\nup 1\nforward 3\ndown 5\nforward 3\ndown 3\nforward 4\nup 3\ndown 6\ndown 7\ndown 4\ndown 8\ndown 4\ndown 5\nup 9\nup 1\ndown 7\nup 3\nup 3\ndown 3\nup 4\nup 6\nforward 8\ndown 1\nforward 7\nforward 4\ndown 9\ndown 1\nforward 7\nforward 9\nforward 1\ndown 3\ndown 2\nforward 3\nforward 2\ndown 7\nforward 9\nforward 6\nup 9\ndown 2\nforward 9\nup 6\nforward 8\nup 1\ndown 5\ndown 8\nforward 1\ndown 1\nforward 9\nup 1\nforward 9\nforward 1\nforward 1\ndown 7\nforward 3\nforward 6\ndown 5\nforward 7\nforward 1\ndown 7\ndown 6\ndown 6\nforward 5\nup 6\ndown 6\nforward 8\nup 2\ndown 8\ndown 3\nup 5\nup 8\ndown 6\nforward 4\nforward 2\nup 3\nforward 5\nforward 3\nup 8\nforward 6\nup 8\nforward 1\nup 8\nup 7\nup 6\nforward 2\ndown 9\ndown 9\nforward 3\ndown 7\nforward 3\ndown 6\nforward 9\nup 5\ndown 1\nforward 7\ndown 1\ndown 5\ndown 9\nforward 8\nforward 9\nforward 7\ndown 9\nup 4\nforward 5\ndown 5\nforward 5\ndown 9\nforward 9\nforward 3\nup 5\nforward 8\nup 5\ndown 1\nforward 8\ndown 3\nforward 6\nup 9\nforward 8\ndown 4\nforward 3\ndown 5\nforward 8\nforward 9\nforward 2\ndown 1\ndown 6\ndown 4\nforward 9\nup 2\ndown 3\ndown 6\ndown 3\ndown 9\ndown 1\nup 6\ndown 2\ndown 7\nup 5\nforward 5\nup 1\ndown 7\nforward 6\nup 6\ndown 2\ndown 3\nforward 3\ndown 5\nforward 8\ndown 9\ndown 7\ndown 8\nup 7\ndown 1\nforward 1\nforward 1\ndown 2\nup 4\nforward 2\ndown 3\nup 2\ndown 3\ndown 2\nforward 7\ndown 1\nup 7\ndown 2\ndown 1\nforward 6\ndown 9\nup 9\ndown 4\ndown 6\nup 9\nforward 7\nforward 9\nforward 7\ndown 4\ndown 1\nforward 7\ndown 4\ndown 7\ndown 3\ndown 5\nforward 3\ndown 8\nforward 8\nforward 7\nforward 8\ndown 4\ndown 9\nforward 2\nforward 7\nup 8\nforward 4\ndown 6\nup 8\ndown 2\nforward 3\ndown 6\ndown 8\nforward 8\nforward 2\nforward 9\nup 6\nforward 7\ndown 3\ndown 5\nforward 8\nforward 9\ndown 3\nforward 3\nforward 2\nforward 3\ndown 8\nup 9\nup 5\nup 2\nup 6\nup 1\nup 1\nup 5\nforward 3\nforward 2\ndown 3\nforward 4"} -->
+
+```elixir
+day_2_input =
+  Utils.read_textarea("Day 2 Input")
+  |> String.split("\n", trim: true)
+  |> Enum.map(&String.split(&1, " ", trim: true))
+  |> Enum.map(fn [dir, amount] -> [dir, String.to_integer(amount)] end)
+
+defmodule Day2 do
+  def reduce_commands(["forward", amount], acc) do
+    Map.put(acc, :horizontal, Map.get(acc, :horizontal, 0) + amount)
+  end
+
+  def reduce_commands(["up", amount], acc) do
+    Map.put(acc, :depth, Map.get(acc, :depth, 0) - amount)
+  end
+
+  def reduce_commands(["down", amount], acc) do
+    Map.put(acc, :depth, Map.get(acc, :depth, 0) + amount)
+  end
+end
+
+%{
+  depth: depth,
+  horizontal: horizontal
+} = Enum.reduce(day_2_input, %{}, &Day2.reduce_commands/2)
+
+depth * horizontal
+```
+
+```output
+1692075
+```
+
+Based on your calculations, the planned course doesn't seem to make any sense. You find the submarine manual and discover that the process is actually slightly more complicated.
+
+In addition to horizontal position and depth, you'll also need to track a third value, aim, which also starts at 0. The commands also mean something entirely different than you first thought:
+
+```
+down X increases your aim by X units.
+up X decreases your aim by X units.
+forward X does two things:
+It increases your horizontal position by X units.
+It increases your depth by your aim multiplied by X.
+```
+
+Again note that since you're on a submarine, down and up do the opposite of what you might expect: "down" means aiming in the positive direction.
+
+Now, the above example does something different:
+
+`forward 5` adds 5 to your horizontal position, a total of 5. Because your aim is 0, your depth does not change.
+
+`down 5` adds 5 to your aim, resulting in a value of 5.
+
+`forward 8` adds 8 to your horizontal position, a total of 13. Because your aim is 5, your depth increases by 8*5=40.
+
+`up 3` decreases your aim by 3, resulting in a value of 2.
+
+`down 8` adds 8 to your aim, resulting in a value of 10.
+
+`forward 2` adds 2 to your horizontal position, a total of 15. Because your aim is 10, your depth increases by 2*10=20 to a total of 60.
+
+After following these new instructions, you would have a horizontal position of 15 and a depth of 60. (Multiplying these produces 900.)
+
+*Using this new interpretation of the commands, calculate the horizontal position and depth you would have after following the planned course. What do you get if you multiply your final horizontal position by your final depth?*
+
+```elixir
+defmodule Day2PartTwo do
+  def reduce_commands(["forward", amount], acc) do
+    Map.put(acc, :horizontal, Map.get(acc, :horizontal, 0) + amount)
+    |> Map.put(:depth, Map.get(acc, :depth, 0) + Map.get(acc, :aim, 0) * amount)
+  end
+
+  def reduce_commands(["up", amount], acc) do
+    Map.put(acc, :aim, Map.get(acc, :aim, 0) - amount)
+  end
+
+  def reduce_commands(["down", amount], acc) do
+    Map.put(acc, :aim, Map.get(acc, :aim, 0) + amount)
+  end
+end
+
+%{
+  depth: depth,
+  horizontal: horizontal
+} = Enum.reduce(day_2_input, %{}, &Day2PartTwo.reduce_commands/2)
+
+horizontal * depth
+```
+
+```output
+1749524700
 ```
