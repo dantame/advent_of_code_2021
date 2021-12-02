@@ -270,24 +270,25 @@ day_2_input =
   |> Enum.map(&String.split(&1, " ", trim: true))
   |> Enum.map(fn [dir, amount] -> [dir, String.to_integer(amount)] end)
 
-defmodule Day2 do
-  def reduce_commands(["forward", amount], acc) do
-    Map.put(acc, :horizontal, Map.get(acc, :horizontal, 0) + amount)
-  end
-
-  def reduce_commands(["up", amount], acc) do
-    Map.put(acc, :depth, Map.get(acc, :depth, 0) - amount)
-  end
-
-  def reduce_commands(["down", amount], acc) do
-    Map.put(acc, :depth, Map.get(acc, :depth, 0) + amount)
-  end
-end
-
 %{
   depth: depth,
   horizontal: horizontal
-} = Enum.reduce(day_2_input, %{}, &Day2.reduce_commands/2)
+} =
+  Enum.reduce(day_2_input, %{depth: 0, horizontal: 0}, fn [direction, amount], acc ->
+    case direction do
+      "forward" ->
+        %{acc | horizontal: acc.horizontal + amount}
+
+      "down" ->
+        %{acc | depth: acc.depth + amount}
+
+      "up" ->
+        %{acc | depth: acc.depth - amount}
+
+      _ ->
+        acc
+    end
+  end)
 
 depth * horizontal
 ```
@@ -329,25 +330,25 @@ After following these new instructions, you would have a horizontal position of 
 *Using this new interpretation of the commands, calculate the horizontal position and depth you would have after following the planned course. What do you get if you multiply your final horizontal position by your final depth?*
 
 ```elixir
-defmodule Day2PartTwo do
-  def reduce_commands(["forward", amount], acc) do
-    Map.put(acc, :horizontal, Map.get(acc, :horizontal, 0) + amount)
-    |> Map.put(:depth, Map.get(acc, :depth, 0) + Map.get(acc, :aim, 0) * amount)
-  end
-
-  def reduce_commands(["up", amount], acc) do
-    Map.put(acc, :aim, Map.get(acc, :aim, 0) - amount)
-  end
-
-  def reduce_commands(["down", amount], acc) do
-    Map.put(acc, :aim, Map.get(acc, :aim, 0) + amount)
-  end
-end
-
 %{
   depth: depth,
   horizontal: horizontal
-} = Enum.reduce(day_2_input, %{}, &Day2PartTwo.reduce_commands/2)
+} =
+  Enum.reduce(day_2_input, %{depth: 0, horizontal: 0, aim: 0}, fn [direction, amount], acc ->
+    case direction do
+      "forward" ->
+        %{acc | depth: acc.depth + acc.aim * amount, horizontal: acc.horizontal + amount}
+
+      "down" ->
+        %{acc | aim: acc.aim + amount}
+
+      "up" ->
+        %{acc | aim: acc.aim - amount}
+
+      _ ->
+        acc
+    end
+  end)
 
 horizontal * depth
 ```
