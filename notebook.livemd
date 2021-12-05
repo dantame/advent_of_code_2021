@@ -505,3 +505,379 @@ oxygen * co2
 ```output
 4432698
 ```
+
+## Day 4: Giant Squid
+
+You're already almost 1.5km (almost a mile) below the surface of the ocean, already so deep that you can't see any sunlight. What you can see, however, is a giant squid that has attached itself to the outside of your submarine.
+
+Maybe it wants to play bingo?
+
+Bingo is played on a set of boards each consisting of a 5x5 grid of numbers. Numbers are chosen at random, and the chosen number is marked on all boards on which it appears. (Numbers may not appear on all boards.) If all numbers in any row or any column of a board are marked, that board wins. (Diagonals don't count.)
+
+The submarine has a bingo subsystem to help passengers (currently, you and the giant squid) pass the time. It automatically generates a random order in which to draw numbers and a random set of boards (your puzzle input). For example:
+
+`7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1`
+
+```
+22 13 17 11  0
+ 8  2 23  4 24
+21  9 14 16  7
+ 6 10  3 18  5
+ 1 12 20 15 19
+
+ 3 15  0  2 22
+ 9 18 13 17  5
+19  8  7 25 23
+20 11 10 24  4
+14 21 16 12  6
+
+14 21 17 24  4
+10 16 15  9 19
+18  8 23 26 20
+22 11 13  6  5
+ 2  0 12  3  7
+```
+
+After the first five numbers are drawn (7, 4, 9, 5, and 11), there are no winners, but the boards are marked as follows (shown here adjacent to each other to save space):
+
+```
+22 13 17 11  0         3 15  0  2 22        14 21 17 24  4
+ 8  2 23  4 24         9 18 13 17  5        10 16 15  9 19
+21  9 14 16  7        19  8  7 25 23        18  8 23 26 20
+ 6 10  3 18  5        20 11 10 24  4        22 11 13  6  5
+ 1 12 20 15 19        14 21 16 12  6         2  0 12  3  7
+```
+
+After the next six numbers are drawn (17, 23, 2, 0, 14, and 21), there are still no winners:
+
+```
+22 13 17 11  0         3 15  0  2 22        14 21 17 24  4
+ 8  2 23  4 24         9 18 13 17  5        10 16 15  9 19
+21  9 14 16  7        19  8  7 25 23        18  8 23 26 20
+ 6 10  3 18  5        20 11 10 24  4        22 11 13  6  5
+ 1 12 20 15 19        14 21 16 12  6         2  0 12  3  7
+```
+
+Finally, 24 is drawn:
+
+```
+22 13 17 11  0         3 15  0  2 22        14 21 17 24  4
+ 8  2 23  4 24         9 18 13 17  5        10 16 15  9 19
+21  9 14 16  7        19  8  7 25 23        18  8 23 26 20
+ 6 10  3 18  5        20 11 10 24  4        22 11 13  6  5
+ 1 12 20 15 19        14 21 16 12  6         2  0 12  3  7
+```
+
+At this point, the third board wins because it has at least one complete row or column of marked numbers (in this case, the entire top row is marked: 14 21 17 24 4).
+
+The score of the winning board can now be calculated. Start by finding the sum of all unmarked numbers on that board; in this case, the sum is 188. Then, multiply that sum by the number that was just called when the board won, 24, to get the final score, 188 * 24 = 4512.
+
+To guarantee victory against the giant squid, figure out which board will win first. What will your final score be if you choose that board?
+
+<!-- livebook:{"livebook_object":"cell_input","name":"Day 4 Input","type":"textarea","value":"31,50,68,16,25,15,28,80,41,8,75,45,96,9,3,98,83,27,62,42,59,99,95,13,55,10,23,84,18,76,87,56,88,66,1,58,92,89,19,54,85,74,39,93,77,26,30,52,69,48,91,73,72,38,64,53,32,51,6,29,17,90,34,61,70,4,7,57,44,97,82,37,43,14,81,65,11,22,5,36,71,35,78,12,0,94,47,49,33,79,63,86,40,21,24,46,20,2,67,60\n\n95 91 54 75 45\n46 94 39 44 85\n31 43 24  2 70\n90 58  4 30 77\n13 26 38 52 34\n\n68 14 99 63 46\n67 16 82 10  8\n55 52 41 51  4\n90 17 32 44 74\n89 94 73 56 36\n\n 6 91  2 28 71\n 7 88 37 21 36\n95 32 84 57  8\n13 79 89 75 48\n47 81 66 17  5\n\n44 55 48 16 41\n35  5 43 53 11\n 0 79 19 82 49\n30 85 31 72 39\n27 68 65 66 95\n\n 6 46 55 24 40\n87 16 62 11 64\n 8 49 18 59 91\n72 28 48 19 96\n39 73  9 88  0\n\n46  1 18 93  6\n50 96 41 81 58\n62 66 49 32 55\n29 11 65  2 10\n71 30 17 69 43\n\n84 57  6 56 95\n39 15 32  1 10\n55 43 40  3 22\n89 54 13 80 38\n72 12 59 71 77\n\n 3 51 72 88  6\n56 64 99 82 36\n75 81 42 67 24\n41 79 35 40 73\n 2 14 61 50 87\n\n72  7  0 99 24\n29 81 92 74 38\n84 53 20 56 91\n93 64 44 48  2\n37 40 88 96 97\n\n39 87 99 75 38\n45 81 46 72 62\n40  8 24 67 79\n96  1 77 73 70\n34 13 55 83 59\n\n18 38 55 84 58\n35 97 31 26 44\n80  1 28 71 85\n45 46 10 32 99\n60 48 72 11 53\n\n53 44  6 30 82\n65 64 10  0 86\n81 50  5 21 60\n16 19 97 66 73\n20 24 96 68 69\n\n33 85 88 58 20\n19  2 99 40 70\n69 10 17 67 23\n48  9 29 34  3\n89 30 43 41 94\n\n30 83 37 14 78\n57 42 98 90 28\n 5 82 51 15 55\n77 79 96 67 53\n22 76  0 59 47\n\n10 93 84 54 11\n59 30  6 94 75\n 9 62 68 37 24\n61  3 66 58 74\n64  0 83 32 13\n\n24 77 15  5 49\n23 11 70 17 10\n62 33 38 36 12\n 3 61  0 26 65\n63 47 54 50  9\n\n34 28 24 55 38\n69 37 36 32 72\n91 85  9 64 68\n94 22 96 90 82\n30 20 97 19 56\n\n35 90 58 93  2\n72  8 27 88 16\n25 54 69 60 61\n 1 15  9 71 78\n89 42 46 57 91\n\n43 38 47  1 82\n19 32  2 95 51\n78 74 91 10 22\n80 77 33 60 14\n 0 98 70 54 50\n\n71 94  3 84 31\n10 59 12 28 46\n68 69 13 48 36\n37 49 24 26 61\n72 65 38 16 25\n\n68 78 10 90 29\n40 14 45 43 44\n27 75 72 39 87\n96 93 53 12 11\n37 64 56 59 76\n\n19 78 84 68 41\n36 96 87 15 55\n47 33 10 91 85\n11 94 31 49 35\n83 63 86  4 76\n\n 5 89 55 46 96\n67 22 95 82 56\n61 94 84 99 28\n71 70 16 57 63\n98 92 86 73 83\n\n56 24 93 88 29\n74 89 50 44 79\n97 49 87 31  8\n70  6 57  3 82\n20 25 99 48 78\n\n80 20 45 22 57\n43 35 48 44 52\n29 98 38 27 11\n64 49 84 60 31\n 7 97 17 85 74\n\n21  1 18 41 62\n76 38 13 46 27\n 0 16 43 28 53\n54 42 22 83 20\n 4 25 50 11 56\n\n21 71 73 30 51\n92 27 14 16 11\n89 43 38 62 31\n65  4 36 84 94\n56 13 59 22  6\n\n46 28 45 57  6\n16 67 33 20 44\n36 86 92  3 11\n98 27 26 84 31\n 5 76 13 65 25\n\n49 55 99 31 73\n80  0 83 26 65\n 3 96 60 37 50\n57 34  7 20 23\n70 52 93 13 71\n\n78 41 81 32 76\n37 36 16 99 48\n 3 93 33 85 35\n60 38 74 80 56\n86 29 87 20  7\n\n98 24  4  9 82\n22 37 52 81 30\n51 70 17 23  8\n60 61 75 35 85\n33 48 88 13 57\n\n49 52 91 21 46\n90 51 70  5 35\n57 68 31 86 87\n42 36 25 95  3\n73 64 17 96 80\n\n 6 42 13 16 24\n51 72 55 78 47\n67 28  7 97 64\n44 77 98 71 25\n82  8 31 76 73\n\n63 79 18 80 27\n57 66 47 89 14\n15 61 94 38 29\n21 53 73 17 76\n65  7 23 36  3\n\n93 22  8 52  4\n63 31 90 46 68\n51 14 95 50 23\n17 34 60 75 36\n88 55  7  0 73\n\n42 67 91 15 83\n 1 37 76 12 25\n29 82 50 70 86\n74 66 39 90 16\n31 71 47  5 92\n\n98 48 27 87  2\n60  0 25 30 14\n44 61 94 82 16\n17 19 53 49 59\n15 85 50 63  8\n\n63 12 52 81 97\n87 68 44 31 41\n39 24 99 27  6\n 1 21 35 59 51\n 4 92  3 90 62\n\n66 43 98 25 47\n59 16 75 44 82\n40 58 48 60 37\n13 81 61 45 83\n24 89 93 19 67\n\n 8 86 47 81 83\n 1 91 57 59 68\n 0 52 25 93 95\n27 84 63 45 36\n39 62 20 99 88\n\n67 28 65  4 17\n44 33 12 99 84\n27 36 34  5 10\n38 63 97 82 64\n94 19 58 41  6\n\n28 41 96 16 39\n93 78 56 69 75\n74 60  9 30  7\n12 81 35 84 94\n45 20  6 49  2\n\n33  7  5 43  9\n97 65 50  2  1\n26 86 76 47 98\n83 31 30 58 52\n93 51 34 63 12\n\n65 81 10 46 59\n51 89 85  2 52\n13 54 18 70  4\n37 94 75 92 56\n58 99 91 32 41\n\n44 23 18 16 75\n 5  3 45 76 90\n20 71 69 37 99\n49 91 43 32 82\n 4 79 51  2 39\n\n54 80 71 61 76\n81 52  6 89 34\n58 14 20 26 40\n25 60 45  0  3\n36 33 65 41 94\n\n53 23 56 55 92\n 3 81 59  0 35\n32 30 93 70 40\n45 91 24 65  6\n95 88 16 47  8\n\n24 23 10 47 63\n38 79 18 77 62\n13 88 72 68 36\n96 27 12 69 89\n28 94  6 98 20\n\n70  1 61 77 28\n92 22 30 48 96\n66  3 34 29 45\n85  6 17 87  5\n97 89 14 80 20\n\n40 86 97  5 54\n91 57 12 19  7\n62 88 92 20 32\n50 77 11 39 22\n33  2 21 95 35\n\n51 79 64 24 28\n95 19 82 58 76\n69 30  9 14 42\n27 16 56 80 83\n52  5 49 43 45\n\n26 65 68 18 55\n58 83 30 48  4\n69 42 78 96 22\n91 13 82 38 41\n67 33 10 98 53\n\n74 97 43  1 18\n49 30 28 10 15\n42 12 80 20 96\n41 92 67 22 36\n 5 26 13 47  4\n\n85 60 72 19 48\n61 21 43 34 83\n51 75 94 11 78\n27 89 45 49 79\n97 15  5 28 50\n\n69 99 97 77 98\n37 80 86  7 34\n85 28 31 23 16\n32 47  8 40  4\n46 91 71 54 74\n\n23 43 29  7 21\n58 34 42  4 38\n64 96 16 73 49\n36 92 52 81 31\n85 71 78 13  5\n\n65 71 46  5 11\n24  4  6  0 23\n13 17 76 15 34\n27 79 10 56 85\n90 19 30 94 78\n\n81 40 65 12 35\n23 93 24 96 53\n27 60 87 59 33\n76 56  4 17  6\n78 49 90  3 80\n\n 7 25 42 85 39\n40  6 26 11 63\n48 20 62 61 89\n78 15 18 21 53\n69  4 87 47  5\n\n38 65 87 72 26\n88 75 10 30  3\n89 58  7 20 32\n85  2 97 63 15\n28 77 82 57 64\n\n16 89  6 31 27\n45 69 61  5 15\n40 75 64 94 98\n36 18 26 58 90\n10 44 59 13 67\n\n80 13 39 49 42\n50 94 12 14 88\n97 48 15 68 69\n21 18 51 99 91\n89 64 35 63 84\n\n81 96 26 43 30\n 5 74  9 93 60\n63 41  1 14 22\n 4 77 33 53  3\n38 90 50 25 10\n\n58 66 17  0 16\n 5 67 41 48 40\n43 93 76 95 68\n 4 13 14 51  8\n56 74 23 57 94\n\n18 15 92  4 20\n69 26 84 23  2\n72 35 56 96  9\n61 41 85 91 25\n13 70  1 14 77\n\n15 20 77 80 47\n45 34 63 55 75\n65 12 66 44 22\n74  3 25 38 93\n 9 31 68 87 67\n\n54 95 79 50 75\n18 36 20 34 43\n17 65 55 98 61\n27 46 56  6 52\n91 31 30 40  0\n\n25 30 24 64 98\n 8 72 53 45  3\n27 77  0 33 44\n89 39 34 71 38\n54 21 20 80 23\n\n69 38 63 60  4\n55 37 83 68 61\n67 25 86 24 18\n22 59 65 28 70\n84 46 44 91 96\n\n35 27 65 31  0\n46 97 44 74  4\n56 61  7 49 88\n 5 38 50 20 26\n62  9 45 64 51\n\n 3 28 43 97  7\n88 57 17 82 73\n16 94 74 22 39\n84 99 31  1 47\n92 91 55 38 78\n\n60 31 29 49 72\n89 41  5 79 22\n58 28 90 76 95\n93 45 14 47 37\n65 25  7 59 62\n\n58  1 73 30 55\n95 46  5 80 63\n52 16 70 20 71\n84 60 15  0 77\n99 89 17 72 31\n\n83 21 68 18 42\n 1 28 97 31 35\n 2 38 67 63 74\n77 27 48 90 86\n12 52 26 29 60\n\n81 53 80 85 96\n19 32 31 15 88\n91 92 66 37 34\n74 75 33 39 78\n42 40 30 83 58\n\n40 41 80 69 67\n24 63 97 33  5\n28 84 34 72 11\n36 79 91 14 92\n55 89 59 10 44\n\n 0 51 49 24 60\n48 65 28 70 66\n86 58 78 77 18\n 6 44 50 37 36\n 4 73 91 97 43\n\n66 42 76 12 48\n77 83 35 18 50\n30 87 95 99 11\n 0 52 92 16 51\n26 56 39 64 62\n\n83 89 52 61 45\n74 77 66 59 30\n85 17 38 10  8\n97 67 54 21 26\n34 63 11 94 40\n\n93 91 14 49 38\n77 53 29 36 39\n12 52  0 48 92\n95 82 71 76 37\n19 70 75  9 74\n\n80 49 59 67 27\n43 66 97 81 12\n10 77 24 75 68\n16 57 14 28 85\n41 52 23 15  2\n\n39 89 66 27 11\n63 84 21 44 69\n56 51 58 70 83\n14  0  8 41 31\n98 18 61 97 74\n\n97 18 63 29 24\n75 73 80  8  7\n81 37 46 93 68\n57 32  2 41  5\n 4 65 88 45 54\n\n87 26 81 12 50\n19  9 68 23 71\n74 38  4 34 16\n18 99 86 45  7\n35  8 11 98 57\n\n13 31 78 59 58\n51 61 96 68 44\n41 85 26 55 92\n11 62 30  7 64\n18 19 73 27 17\n\n48 85 71 39 29\n33 79 24  0 72\n95 52 12 77 40\n70 31 46 44 43\n61 88 73 49 65\n\n60 81 51 24 27\n23 28 47 85 67\n35 57 45 76 84\n19 48 30 37 74\n15 78 56 87 16\n\n12  5 45 26 21\n 1 71 51 10 25\n37 68 73 46 56\n55 20 63 87 91\n22 32 66 90 19\n\n20 59 12 29 97\n92 30 77 27 49\n14 98 23 50  6\n11 47 61 34 36\n55 82 13 22 21\n\n29 37  0 40 71\n 2 43 97 18 59\n32 72 89 99 24\n58 90 73 60 85\n69 53 95 78 27\n\n58 28 32 52 55\n86 33  1 41 60\n 8 53 42 92  5\n43 69 96 54 24\n74 10 17 89 85\n\n51 74 99 21 64\n54 27 60 32 37\n14 45 50 81 94\n28 11 77 17 23\n93 95 53 57 79\n\n16  5 80 45 71\n22 57  9 90 43\n 3 52 47 59 84\n28 53 14 15  7\n50 76 46 56 34\n\n83 62 77 56 26\n82 35 11  6 51\n96 97 15  1 78\n92 45 55 84 94\n20  8 70 21 31\n\n 4 47 68 81 12\n66 23 35  8 39\n73 94 27 69 22\n59 11 53 26 99\n 7 20 87 60 88\n\n90  0 88 81 43\n47 54 42 29 97\n60 13 85 51 71\n56 14 94 80 41\n75  8 35 69 61\n\n51 38 40 17 42\n19 26 92 64 67\n33 66 82 27 55\n62  2 68 59 31\n 7 24 20 91 79\n\n21 83 45 35 88\n85 11  5 86 72\n78  3 58  0 89\n67  1 39 59 63\n79 87 19  4 57\n\n25 16 40 17 27\n96 72 29 32 87\n50 63 35 81 66\n 7 11 92 68 69\n54 83 12 51 95\n\n64 98 67 54 75\n 8 10 31  5 57\n89 23 25 34 47\n72 74 37 48 94\n39 59 15 55 87"} -->
+
+```elixir
+defmodule Day4 do
+  def parse_board(board_string) do
+    String.split(board_string, "\n", trim: true)
+    |> Enum.map(fn row ->
+      String.split(row, " ", trim: true)
+      |> Enum.map(&String.to_integer/1)
+    end)
+  end
+
+  def transpose(board) do
+    Enum.zip(board)
+    |> Enum.map(&Tuple.to_list/1)
+  end
+
+  def find_winning_board(bingo_numbers, boards) do
+    transposed_boards = Enum.map(boards, &transpose/1)
+    all_boards = Enum.concat(transposed_boards, boards)
+
+    Enum.reduce_while(bingo_numbers, %{called_numbers: [], winning_boards: []}, fn num, acc ->
+      called_numbers = acc.called_numbers ++ [num]
+
+      winning_boards =
+        Enum.filter(all_boards, fn board ->
+          board_has_winning_row?(board, called_numbers)
+        end)
+
+      cond do
+        length(winning_boards) >= 1 ->
+          {:halt,
+           %{acc | winning_boards: winning_boards, called_numbers: acc.called_numbers ++ [num]}}
+
+        true ->
+          {:cont, %{acc | called_numbers: called_numbers}}
+      end
+    end)
+  end
+
+  def calculate_score(bingo_numbers, boards) do
+    %{winning_boards: [winning_board], called_numbers: called_numbers} =
+      find_winning_board(bingo_numbers, boards)
+
+    sum =
+      List.flatten(winning_board)
+      |> Enum.reject(fn num ->
+        num in called_numbers
+      end)
+      |> Enum.sum()
+
+    sum * List.last(called_numbers)
+  end
+
+  def board_has_winning_row?(board, called_numbers) do
+    Enum.any?(board, fn row ->
+      MapSet.subset?(MapSet.new(row), MapSet.new(called_numbers))
+    end)
+  end
+end
+
+[number_string | board_strings] =
+  Utils.read_textarea("Day 4 Input")
+  |> String.split("\n\n", trim: true)
+
+bingo_numbers = String.split(number_string, ",", trim: true) |> Enum.map(&String.to_integer/1)
+
+boards = Enum.map(board_strings, &Day4.parse_board/1)
+
+Day4.calculate_score(bingo_numbers, boards)
+```
+
+```output
+49860
+```
+
+On the other hand, it might be wise to try a different strategy: let the giant squid win.
+
+You aren't sure how many bingo boards a giant squid could play at once, so rather than waste time counting its arms, the safe thing to do is to figure out which board will win last and choose that one. That way, no matter which boards it picks, it will win for sure.
+
+In the above example, the second board is the last to win, which happens after 13 is eventually called and its middle column is completely marked. If you were to keep playing until this point, the second board would have a sum of unmarked numbers equal to 148 for a final score of 148 * 13 = 1924.
+
+Figure out which board will win last. Once it wins, what would its final score be?
+
+```elixir
+defmodule Day4PartTwo do
+  def find_winning_boards(bingo_numbers, boards) do
+    all_boards =
+      Enum.map(boards, fn board ->
+        {Day4.transpose(board), board}
+      end)
+
+    Enum.reduce_while(
+      bingo_numbers,
+      %{called_numbers: [], winning_boards: [], boards_in_play: all_boards},
+      fn num, acc ->
+        called_numbers = acc.called_numbers ++ [num]
+
+        new_boards_in_play =
+          Enum.reject(acc.boards_in_play, fn {transposed_board, board} ->
+            Day4.board_has_winning_row?(board, called_numbers) or
+              Day4.board_has_winning_row?(transposed_board, called_numbers)
+          end)
+
+        winning_boards =
+          Enum.filter(acc.boards_in_play, fn {transposed_board, board} ->
+            Day4.board_has_winning_row?(board, called_numbers) or
+              Day4.board_has_winning_row?(transposed_board, called_numbers)
+          end)
+          |> Enum.map(&elem(&1, 1))
+
+        cond do
+          length(new_boards_in_play) == 0 ->
+            {:halt,
+             %{
+               acc
+               | winning_boards: acc.winning_boards ++ winning_boards,
+                 called_numbers: called_numbers
+             }}
+
+          true ->
+            {:cont,
+             %{
+               acc
+               | called_numbers: called_numbers,
+                 boards_in_play: new_boards_in_play,
+                 winning_boards: acc.winning_boards ++ winning_boards
+             }}
+        end
+      end
+    )
+  end
+
+  def calculate_score(bingo_numbers, boards) do
+    %{winning_boards: winning_boards, called_numbers: called_numbers} =
+      find_winning_boards(bingo_numbers, boards)
+
+    sum =
+      List.last(winning_boards)
+      |> List.flatten()
+      |> Enum.reject(fn num ->
+        num in called_numbers
+      end)
+      |> Enum.sum()
+
+    sum * List.last(called_numbers)
+  end
+end
+
+Day4PartTwo.calculate_score(bingo_numbers, boards)
+```
+
+```output
+24628
+```
+
+## Day 5: Hydrothermal Venture
+
+You come across a field of hydrothermal vents on the ocean floor! These vents constantly produce large, opaque clouds, so it would be best to avoid them if possible.
+
+They tend to form in lines; the submarine helpfully produces a list of nearby lines of vents (your puzzle input) for you to review. For example:
+
+```
+0,9 -> 5,9
+8,0 -> 0,8
+9,4 -> 3,4
+2,2 -> 2,1
+7,0 -> 7,4
+6,4 -> 2,0
+0,9 -> 2,9
+3,4 -> 1,4
+0,0 -> 8,8
+5,5 -> 8,2
+```
+
+Each line of vents is given as a line segment in the format x1,y1 -> x2,y2 where x1,y1 are the coordinates of one end the line segment and x2,y2 are the coordinates of the other end. These line segments include the points at both ends. In other words:
+
+An entry like `1,1 -> 1,3` covers points `1,1`, `1,2`, and `1,3`.
+An entry like `9,7 -> 7,7` covers points `9,7`, `8,7`, and `7,7`.
+For now, only consider horizontal and vertical lines: lines where either x1 = x2 or y1 = y2.
+
+So, the horizontal and vertical lines from the above list would produce the following diagram:
+
+```
+.......1..
+..1....1..
+..1....1..
+.......1..
+.112111211
+..........
+..........
+..........
+..........
+222111....
+```
+
+In this diagram, the top left corner is 0,0 and the bottom right corner is 9,9. Each position is shown as the number of lines which cover that point or . if no line covers that point. The top-left pair of 1s, for example, comes from 2,2 -> 2,1; the very bottom row is formed by the overlapping lines 0,9 -> 5,9 and 0,9 -> 2,9.
+
+To avoid the most dangerous areas, you need to determine the number of points where at least two lines overlap. In the above example, this is anywhere in the diagram with a 2 or larger - a total of 5 points.
+
+Consider only horizontal and vertical lines. At how many points do at least two lines overlap?
+
+<!-- livebook:{"livebook_object":"cell_input","name":"Day 5 Input","type":"textarea","value":"973,543 -> 601,915\n758,846 -> 758,168\n511,976 -> 568,976\n858,536 -> 858,677\n256,238 -> 265,238\n475,919 -> 718,919\n973,912 -> 134,73\n984,159 -> 175,968\n166,641 -> 15,490\n504,798 -> 504,946\n717,796 -> 128,207\n302,713 -> 168,713\n830,964 -> 830,444\n151,288 -> 549,686\n530,908 -> 820,908\n540,394 -> 717,394\n581,614 -> 581,496\n111,593 -> 230,712\n938,884 -> 938,917\n923,71 -> 20,974\n530,677 -> 530,332\n144,723 -> 144,980\n700,376 -> 700,917\n501,95 -> 198,95\n251,900 -> 435,900\n912,931 -> 96,115\n962,140 -> 181,921\n104,244 -> 104,178\n504,865 -> 504,612\n301,284 -> 301,173\n973,980 -> 17,24\n886,166 -> 886,455\n380,150 -> 971,741\n57,405 -> 135,405\n515,569 -> 774,310\n227,233 -> 874,880\n75,33 -> 75,290\n487,434 -> 983,930\n17,279 -> 20,279\n719,838 -> 508,627\n262,254 -> 555,254\n516,626 -> 631,511\n352,305 -> 352,715\n876,827 -> 876,731\n372,85 -> 372,344\n619,773 -> 619,799\n885,627 -> 441,627\n779,731 -> 42,731\n806,756 -> 806,237\n378,540 -> 187,540\n840,296 -> 210,296\n250,234 -> 171,234\n249,100 -> 757,608\n787,23 -> 787,826\n690,175 -> 365,175\n238,166 -> 238,738\n52,350 -> 574,872\n297,518 -> 297,590\n133,263 -> 133,219\n438,955 -> 939,955\n621,500 -> 621,948\n93,39 -> 530,476\n988,866 -> 220,98\n483,30 -> 329,184\n205,937 -> 419,723\n314,910 -> 842,910\n472,944 -> 923,944\n487,700 -> 586,601\n59,17 -> 333,17\n553,307 -> 553,746\n810,37 -> 810,167\n898,662 -> 858,662\n191,837 -> 191,157\n83,950 -> 83,910\n229,513 -> 559,843\n825,192 -> 44,973\n37,80 -> 460,503\n648,357 -> 29,357\n603,592 -> 425,770\n137,141 -> 693,141\n179,69 -> 479,69\n851,164 -> 172,164\n916,143 -> 99,960\n908,20 -> 28,900\n178,404 -> 700,404\n122,43 -> 645,43\n548,495 -> 155,888\n216,725 -> 216,583\n790,97 -> 51,836\n98,214 -> 98,200\n90,464 -> 141,464\n32,905 -> 912,25\n253,743 -> 253,115\n521,826 -> 304,826\n733,392 -> 733,485\n315,95 -> 964,744\n386,749 -> 553,916\n698,985 -> 59,346\n380,969 -> 820,969\n134,641 -> 310,641\n66,899 -> 860,105\n827,304 -> 560,37\n824,213 -> 132,905\n93,138 -> 200,245\n54,450 -> 54,436\n163,276 -> 31,408\n959,333 -> 976,333\n499,129 -> 645,129\n924,321 -> 924,332\n629,166 -> 629,901\n505,769 -> 864,410\n80,360 -> 48,360\n22,971 -> 983,10\n500,87 -> 721,87\n227,737 -> 227,540\n698,177 -> 698,713\n20,106 -> 20,204\n187,176 -> 902,891\n803,806 -> 574,806\n413,785 -> 413,858\n736,728 -> 28,728\n158,870 -> 20,870\n78,475 -> 75,472\n481,434 -> 80,434\n975,208 -> 425,208\n59,639 -> 304,639\n287,919 -> 923,283\n940,933 -> 104,97\n699,429 -> 466,429\n240,988 -> 929,299\n970,873 -> 396,873\n441,585 -> 441,697\n337,259 -> 36,259\n45,759 -> 45,382\n220,468 -> 373,315\n10,262 -> 793,262\n753,268 -> 147,874\n664,560 -> 603,560\n974,81 -> 974,26\n575,331 -> 254,331\n754,378 -> 727,378\n354,394 -> 298,450\n108,814 -> 108,804\n848,375 -> 604,375\n697,530 -> 697,288\n977,54 -> 967,44\n241,754 -> 484,754\n793,745 -> 755,745\n974,415 -> 974,98\n677,367 -> 677,731\n69,744 -> 695,118\n50,39 -> 940,929\n414,721 -> 414,917\n870,587 -> 870,396\n881,759 -> 583,759\n679,798 -> 679,226\n826,917 -> 217,917\n896,919 -> 102,919\n528,881 -> 498,881\n15,89 -> 15,212\n887,280 -> 747,280\n763,303 -> 967,507\n904,964 -> 562,964\n157,752 -> 433,752\n752,199 -> 34,917\n60,970 -> 921,109\n934,434 -> 683,183\n748,427 -> 748,601\n20,47 -> 957,984\n71,691 -> 332,691\n782,637 -> 782,137\n483,623 -> 704,623\n11,965 -> 274,965\n285,172 -> 700,172\n613,845 -> 855,845\n955,296 -> 738,296\n596,750 -> 596,974\n332,851 -> 360,851\n176,388 -> 107,388\n116,328 -> 325,119\n932,588 -> 403,588\n247,420 -> 247,69\n52,965 -> 52,740\n541,579 -> 541,48\n321,530 -> 321,115\n124,33 -> 986,895\n575,950 -> 922,603\n231,814 -> 755,814\n940,445 -> 957,462\n365,743 -> 432,810\n488,286 -> 777,286\n988,905 -> 887,905\n715,846 -> 842,846\n481,894 -> 481,954\n297,868 -> 297,441\n368,928 -> 368,348\n951,981 -> 49,79\n46,743 -> 551,743\n900,241 -> 50,241\n441,942 -> 441,762\n488,58 -> 488,482\n945,187 -> 945,639\n263,779 -> 476,779\n593,290 -> 593,985\n781,498 -> 914,498\n351,557 -> 351,324\n809,966 -> 709,966\n912,545 -> 522,155\n985,681 -> 903,599\n837,881 -> 532,881\n728,485 -> 753,460\n79,680 -> 79,448\n917,769 -> 917,456\n135,845 -> 135,777\n460,922 -> 981,401\n516,830 -> 516,403\n230,419 -> 230,267\n770,297 -> 583,297\n577,782 -> 488,693\n118,728 -> 791,55\n983,192 -> 983,340\n307,252 -> 393,338\n83,345 -> 83,628\n318,461 -> 318,670\n809,385 -> 809,383\n145,124 -> 444,124\n906,892 -> 906,990\n295,22 -> 295,617\n828,312 -> 828,227\n546,132 -> 546,100\n398,750 -> 398,237\n27,770 -> 299,770\n863,517 -> 863,869\n700,806 -> 168,806\n279,262 -> 169,152\n954,285 -> 681,12\n896,102 -> 127,871\n527,532 -> 404,532\n853,397 -> 168,397\n642,273 -> 595,273\n422,123 -> 422,805\n879,789 -> 879,177\n233,171 -> 917,855\n82,148 -> 559,148\n95,969 -> 95,65\n876,779 -> 876,257\n753,35 -> 51,737\n421,756 -> 735,756\n637,602 -> 637,886\n275,689 -> 275,360\n714,77 -> 714,353\n617,645 -> 764,645\n131,702 -> 689,702\n752,795 -> 524,567\n606,716 -> 632,716\n261,700 -> 261,104\n196,894 -> 377,713\n812,626 -> 812,76\n739,368 -> 360,747\n976,646 -> 976,981\n459,948 -> 500,948\n154,669 -> 179,644\n410,896 -> 661,645\n312,187 -> 248,123\n507,655 -> 513,655\n649,726 -> 649,447\n874,19 -> 24,19\n951,64 -> 57,958\n29,60 -> 533,60\n559,262 -> 941,644\n665,319 -> 531,185\n835,601 -> 918,601\n269,556 -> 871,556\n410,708 -> 410,163\n271,105 -> 860,105\n143,427 -> 475,95\n716,656 -> 716,270\n111,771 -> 822,60\n170,775 -> 233,775\n730,588 -> 730,106\n592,161 -> 901,470\n486,802 -> 289,802\n113,770 -> 726,157\n127,98 -> 825,796\n392,957 -> 794,957\n529,793 -> 529,117\n347,196 -> 347,310\n893,613 -> 360,80\n961,362 -> 961,399\n577,52 -> 577,566\n792,578 -> 792,622\n35,883 -> 35,395\n499,779 -> 499,752\n921,359 -> 921,90\n557,224 -> 290,224\n863,190 -> 874,190\n100,190 -> 100,519\n909,38 -> 33,914\n44,421 -> 98,421\n731,787 -> 731,462\n722,28 -> 722,685\n913,538 -> 274,538\n149,648 -> 149,186\n302,594 -> 521,594\n927,333 -> 546,714\n503,42 -> 333,42\n474,260 -> 835,621\n825,363 -> 825,188\n335,140 -> 227,32\n914,613 -> 914,15\n955,734 -> 398,734\n506,913 -> 506,232\n612,271 -> 612,881\n155,856 -> 282,856\n207,820 -> 898,129\n329,463 -> 475,463\n371,719 -> 371,737\n103,503 -> 103,722\n846,779 -> 360,293\n597,247 -> 253,247\n305,912 -> 305,960\n283,277 -> 283,358\n369,327 -> 418,327\n107,190 -> 107,269\n469,247 -> 918,247\n944,213 -> 990,213\n930,158 -> 594,158\n459,844 -> 459,519\n493,387 -> 107,387\n514,173 -> 669,328\n818,876 -> 73,131\n405,783 -> 405,54\n583,151 -> 583,654\n211,462 -> 211,938\n639,224 -> 639,728\n561,33 -> 561,719\n607,244 -> 47,244\n772,61 -> 772,795\n777,920 -> 63,206\n121,281 -> 90,281\n668,99 -> 893,99\n352,620 -> 652,620\n589,50 -> 547,50\n845,252 -> 845,974\n666,870 -> 94,870\n724,524 -> 344,904\n569,40 -> 482,40\n224,619 -> 741,619\n935,110 -> 143,902\n107,37 -> 906,836\n308,298 -> 821,298\n983,619 -> 868,734\n659,166 -> 497,328\n60,423 -> 60,507\n483,283 -> 90,283\n568,309 -> 568,873\n262,461 -> 890,461\n328,633 -> 94,867\n892,195 -> 177,910\n310,874 -> 915,269\n647,54 -> 531,54\n749,523 -> 408,864\n597,882 -> 857,882\n756,498 -> 468,498\n671,248 -> 671,510\n676,855 -> 130,309\n46,18 -> 659,18\n144,164 -> 87,221\n412,774 -> 412,930\n67,368 -> 745,368\n246,704 -> 619,331\n714,113 -> 159,113\n203,109 -> 203,641\n418,708 -> 110,708\n619,546 -> 619,531\n617,957 -> 545,957\n630,423 -> 630,909\n584,379 -> 679,474\n572,918 -> 572,16\n101,712 -> 755,58\n167,317 -> 912,317\n836,130 -> 570,130\n759,847 -> 523,847\n901,40 -> 901,479\n908,157 -> 908,558\n351,252 -> 280,181\n648,730 -> 253,730\n330,984 -> 110,984\n717,552 -> 746,581\n206,831 -> 904,133\n684,232 -> 684,20\n889,73 -> 155,73\n896,728 -> 896,589\n55,983 -> 988,50\n342,746 -> 342,617\n138,683 -> 795,26\n968,226 -> 787,226\n311,713 -> 355,713\n201,789 -> 201,401\n909,623 -> 205,623\n540,130 -> 540,722\n695,511 -> 191,511\n221,320 -> 221,68\n75,118 -> 599,642\n982,977 -> 30,25\n534,598 -> 720,784\n355,579 -> 13,921\n137,516 -> 137,665\n510,244 -> 510,392\n845,52 -> 327,570\n167,100 -> 909,100\n573,133 -> 34,672\n371,341 -> 371,823\n959,981 -> 20,42\n143,793 -> 143,134\n815,798 -> 914,897\n286,212 -> 188,114\n28,987 -> 985,30\n652,108 -> 652,540\n978,565 -> 507,94\n817,166 -> 402,166\n250,723 -> 128,845\n676,274 -> 53,897\n981,985 -> 12,16\n682,195 -> 270,195\n409,113 -> 114,113\n585,83 -> 585,514\n897,978 -> 569,650\n158,420 -> 158,709\n603,335 -> 966,698\n484,53 -> 972,541\n149,128 -> 149,329\n555,926 -> 555,393\n143,849 -> 614,378\n816,79 -> 507,79\n525,502 -> 812,502\n736,509 -> 736,579\n612,179 -> 629,179\n821,70 -> 821,566\n665,90 -> 416,90\n63,80 -> 837,854\n151,873 -> 890,134\n698,204 -> 698,973\n936,693 -> 612,369\n369,628 -> 947,50\n308,407 -> 308,590\n367,156 -> 963,752\n949,943 -> 536,530\n589,553 -> 256,886\n348,171 -> 348,759\n546,488 -> 546,585\n351,486 -> 779,58\n952,45 -> 33,964\n187,896 -> 187,100\n725,679 -> 725,486\n756,147 -> 264,639\n281,205 -> 281,764\n630,221 -> 73,221\n919,953 -> 775,953\n552,821 -> 925,821\n294,854 -> 922,226\n772,642 -> 961,831\n705,159 -> 308,556\n107,983 -> 393,697\n403,277 -> 403,802\n719,824 -> 719,187\n947,956 -> 253,956\n453,135 -> 952,135\n905,491 -> 574,160\n498,225 -> 764,491\n741,111 -> 597,111\n881,130 -> 881,668\n308,616 -> 866,616\n172,434 -> 855,434\n218,412 -> 218,861\n293,318 -> 293,770\n712,513 -> 679,513\n100,586 -> 434,920\n338,407 -> 176,407\n481,534 -> 715,768\n805,127 -> 216,127\n406,425 -> 322,425\n154,769 -> 823,100\n813,508 -> 159,508\n286,637 -> 286,24\n55,836 -> 665,836\n571,857 -> 459,969\n414,977 -> 414,604\n133,884 -> 972,45\n383,522 -> 383,141\n889,14 -> 62,841\n122,49 -> 43,49\n544,846 -> 544,76\n948,19 -> 62,905\n798,577 -> 833,542\n973,267 -> 751,45\n620,648 -> 620,419\n102,813 -> 633,813\n255,263 -> 826,263\n231,394 -> 231,811"} -->
+
+```elixir
+day_5_input =
+  Utils.read_textarea("Day 5 Input")
+  |> String.split("\n", trim: true)
+  |> Enum.map(fn row ->
+    String.split(row, "->", trim: true)
+    |> Enum.flat_map(fn coord ->
+      String.split(coord, ",", trim: true)
+      |> Enum.map(&(String.trim(&1) |> String.to_integer()))
+    end)
+  end)
+
+defmodule Day5 do
+  def find_answer(grid) do
+    grid
+    |> Enum.filter(fn [x1, y1, x2, y2] ->
+      x1 == x2 or y1 == y2
+    end)
+    |> Enum.reduce([], fn [x1, y1, x2, y2], acc ->
+      x_range = x1..x2
+      y_range = y1..y2
+
+      coordinates =
+        for x <- x_range, y <- y_range do
+          [x, y]
+        end
+
+      acc ++ coordinates
+    end)
+    |> Enum.frequencies_by(fn [x, y] ->
+      "#{x},#{y}"
+    end)
+    |> Enum.filter(fn {_k, v} -> v >= 2 end)
+    |> Enum.count()
+  end
+end
+
+Day5.find_answer(day_5_input)
+```
+
+```output
+5608
+```
+
+Unfortunately, considering only horizontal and vertical lines doesn't give you the full picture; you need to also consider diagonal lines.
+
+Because of the limits of the hydrothermal vent mapping system, the lines in your list will only ever be horizontal, vertical, or a diagonal line at exactly 45 degrees. In other words:
+
+An entry like `1,1 -> 3,3` covers points `1,1`, `2,2`, and `3,3`.
+An entry like `9,7 -> 7,9` covers points `9,7`, `8,8`, and `7,9`.
+Considering all lines from the above example would now produce the following diagram:
+
+```
+1.1....11.
+.111...2..
+..2.1.111.
+...1.2.2..
+.112313211
+...1.2....
+..1...1...
+.1.....1..
+1.......1.
+222111....
+```
+
+You still need to determine the number of points where at least two lines overlap. In the above example, this is still anywhere in the diagram with a 2 or larger - now a total of 12 points.
+
+Consider all of the lines. At how many points do at least two lines overlap?
+
+```elixir
+defmodule Day5P2 do
+  def find_answer(grid) do
+    grid
+    |> Enum.reduce([], fn [x1, y1, x2, y2], acc ->
+      m = if x1 - x2 != 0, do: (y1 - y2) / (x1 - x2), else: nil
+      x_range = x1..x2
+      y_range = y1..y2
+
+      coordinates =
+        for x <- x_range, y <- y_range do
+          cond do
+            m != nil and y - y1 == m * (x - x1) -> [x, y]
+            m == nil -> [x, y]
+            true -> nil
+          end
+        end
+
+      acc ++ Enum.filter(coordinates, &(&1 != nil))
+    end)
+    |> Enum.frequencies_by(fn [x, y] ->
+      "#{x},#{y}"
+    end)
+    |> Enum.filter(fn {_k, v} -> v >= 2 end)
+    |> Enum.count()
+  end
+end
+
+Day5P2.find_answer(day_5_input)
+```
+
+```output
+20299
+```
